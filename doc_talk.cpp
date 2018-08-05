@@ -20,7 +20,7 @@ int main()
 		{ 
     char str[250];
    	ifstream fin;
-	fin.open("F:/other_codes/afile.txt");
+	fin.open("DOC_TALK/afile.txt");
 	while(fin)
 	{
 	fin.getline(str,250);
