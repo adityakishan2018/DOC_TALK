@@ -8,13 +8,14 @@ int main()
 
 
 
-    int dis,ch,D1=0,D2=0,D3=0,i=0,pin,PIN=1234,total_amount,meter;
+    int dis,ch,D1=0,D2=0,D3=0,D4=0,i=0,pin,total_amount,meter;
+    int PIN[]={1234,5678,1357,2468};
     char p,preg;
-    int S[3];
+    int S[4];
     end:
     cout<<"ENTER YOUR LOGIN PIN"<<endl;
     cin>>pin;
-    if(pin==PIN)
+    if(pin==PIN[0]||PIN[1]||PIN[2]||PIN[3])
     {
     	do
 		{ 
@@ -43,9 +44,14 @@ int main()
                    cout<<"7.increased thirst,urination,dry mouth"<<endl;
                    cout<<"8.fatigue"<<endl;
                    cout<<"9.slow healing wounds"<<endl;
-                   cout<<"ENTER ANY THREE SYMPTOMS YOU ARE SUFFERING FROM"<<endl;  	
-                    cin>>S[0]>>S[1]>>S[2];
-                   for(i=0;i<3;i++)
+                   cout<<"10.trouble sleeping"<<endl;
+                   cout<<"11.Breathing problem"<<endl;
+                   cout<<"12.Indigestion"<<endl;
+                   cout<<"13.Back or abdominal pain"<<endl;
+                   cout<<"14.Anxiety"<<endl;
+                   cout<<"ENTER SYMPTOMS YOU ARE SUFFERING FROM"<<endl;  	
+                    cin>>S[0]>>S[1]>>S[2]>>S[3];
+                   for(i=0;i<4;i++)
                    {
                    if(S[i]==1||S[i]==2||S[i]==3)
                    D1++;
@@ -53,8 +59,12 @@ int main()
                    D2++;
                    else if(S[i]==7||S[i]==8||S[i]==9)
                    D3++;
-                   else
-                   cout<<"wrong entry!!!"<<endl;
+                   else if(S[i]==10||S[i]==11||S[i]==12||S[i]==13||S[i]==14)
+                   D4++;
+                   else{
+                   	cout<<"wrong entry!!!"<<endl;
+				   }
+                   
                    }
                    if(D1>=2)
                    cout<<"you are suffering from CHICKEN POX,contact a doctor immediately!!"<<endl;
@@ -62,6 +72,8 @@ int main()
                    cout<<"you are suffering from ASTHAMA,contact a doctor immediately!!"<<endl;
                    else if(D3>=2)
                    cout<<"you are suffering from DIABETES,contact a doctor immediately!!"<<endl;
+                   else if(D4>=3)
+                   cout<<"you are showing symptoms of heart attack,contact a doctor immediately!!"<<endl;
                    else 
                    cout<<"you don't seem to suffer from any specific disease"<<endl;
                    break;
@@ -81,7 +93,7 @@ int main()
                    case 1:
                         cout<<"there is no vaccine against chicken pox as yet.but precaution must be taken as follows"<<endl;
                         cout<<"a)patient should be kept in isolation"<<endl;
-                        cout<<"b)clothings,utensils used by patints should be sterilised"<<endl;
+                        cout<<"b)clothings,utensils used by patients should be sterilised"<<endl;
                         break;
                    case 2:
                         cout<<"there is no cure for asthama ,it can only be controlled"<<endl;
@@ -137,19 +149,19 @@ int main()
     			    	{
     			    		meter++;
 						}
-						else if(preg!='y'||preg!='n')
+						else if(preg=='n')
 						{
-							cout<<"wrong entry"<<endl;
+							meter--;
 						}
 						else{
-							continue;
+							cout<<"wrong entry"<<endl;
 						}
 					}
 					if(meter>=7)
 					{
 					cout<<"CONGRATULATION...!you are taking care of yourself in the best possible way."<<endl;
 				    }
-					else if(meter>=5&&meter<7)
+					else if(meter>=4&&meter<7)
 					{
 					cout<<"You are taking average care of yourself...try to abide by the guidelines mentioned above"<<endl;
 			     	}
