@@ -1,0 +1,2 @@
+language = "cpp"
+run = "g++ doc_talk.cpp -o doc_talk"

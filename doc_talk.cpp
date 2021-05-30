@@ -21,7 +21,7 @@ int main()
 		{ 
     char str[250];
    	ifstream fin;
-	fin.open("DOC_TALK/afile.txt");
+	fin.open("afile.txt");
 	while(fin)
 	{
 	fin.getline(str,250);
