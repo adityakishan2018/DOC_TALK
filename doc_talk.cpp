@@ -75,7 +75,9 @@ int main()
                    else if(D4>=3)
                    cout<<"you are showing symptoms of heart attack,contact a doctor immediately!!"<<endl;
                    else 
-                   cout<<"you don't seem to suffer from any specific disease"<<endl;
+		   {
+			   cout<<"you don't seem to suffer from any specific disease"<<endl;
+		   }
                    break;
               case 2:
                    cout<<"CURE/TREATMENT/CONTROL OF CERTAIN DISEASES"<<endl;
